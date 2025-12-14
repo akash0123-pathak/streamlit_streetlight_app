@@ -73,7 +73,14 @@ This project demonstrates a practical application of artificial intelligence in 
 
 ## How to Run the Project
 
-Create and activate a virtual environment, install the required dependencies, and start the Streamlit application using the provided Python script. Once running, the application opens in a web browser where all interactions are handled through the graphical interface. The project can also be deployed on Streamlit Cloud without any additional configuration.
+The Smart Streetlight AI application has been successfully deployed on Streamlit Cloud and is accessible through a web browser at the following link:
+https://streetlight-app.streamlit.app/
+
+Once opened, the application runs as a fully interactive web-based system where users can explore the complete workflow without writing any code. The interface is organized into multiple tabs to guide users step by step. The Overview tab explains the purpose of the project and displays the availability of key components such as YOLO and TensorFlow. The Train Models tab allows users to generate a synthetic streetlight dataset and train multiple machine learning models directly within the app, with training progress, accuracy, and evaluation metrics shown on the screen.
+
+In the Run Inference tab, users can upload a road traffic video or use automatically generated sample frames to simulate real-world scenarios. When inference is started, the application processes the input frame by frame, extracts traffic and visibility features, and predicts whether the streetlight should be ON or OFF. The prediction result, confidence score, and traffic counts are overlaid directly on each frame, enabling users to visually understand how the system reacts to changing conditions.
+
+The Models & Data tab provides options to download the generated dataset and trained models, making the deployed application suitable for demonstrations, academic evaluation, and further experimentation. Overall, the deployed Streamlit application demonstrates a complete, working implementation of intelligent streetlight control through an easy-to-use graphical interface.
 
 ---
 
