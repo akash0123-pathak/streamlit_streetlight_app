@@ -189,9 +189,10 @@ def train_tabular_models(df):
     numeric = ['vehicle_count','pedestrian_count','brightness','contrast','fog_score','hour','dayofweek']
     categorical = ['weather']
     preprocessor = ColumnTransformer([
-        ('num', StandardScaler(), numeric),
-        ('cat', OneHotEncoder(handle_unknown='ignore', sparse=False), categorical)
-    ])
+    ('num', StandardScaler(), numeric),
+    ('cat', OneHotEncoder(handle_unknown='ignore', sparse_output=False), categorical)
+])
+
     models = {
         'LogisticRegression': LogisticRegression(max_iter=500),
         'DecisionTree': DecisionTreeClassifier(max_depth=8, random_state=42),
