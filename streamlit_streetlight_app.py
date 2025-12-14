@@ -246,7 +246,12 @@ with tabs[1]:
         df = generate_synthetic_tabular(n=2000)
         st.success("Dataset generated and saved.")
         st.dataframe(df.sample(6))
-        st.download_button("Download dataset CSV", data=df.to_csv(index=False).encode('utf-8'), file_name='streamlit_streetlight_dataset.csv')
+        st.download_button(
+    "Download dataset CSV",
+    data=open(DATA_PATH, 'rb').read(),
+    file_name=str(DATA_PATH.name),
+    key="download_dataset_train")
+
     st.write("---")
     st.write("2) Train models on dataset")
     if st.button("Train Models (this may take a few minutes)"):
@@ -380,7 +385,13 @@ with tabs[3]:
     st.header("Models & Data")
     st.write("Download trained models or dataset if available.")
     if DATA_PATH.exists():
-        st.download_button("Download dataset CSV", data=open(DATA_PATH,'rb').read(), file_name=str(DATA_PATH.name))
+        st.download_button(
+    "Download dataset CSV",
+    data=open(DATA_PATH, 'rb').read(),
+    file_name=str(DATA_PATH.name),
+    key="download_dataset_models"
+)
+
     else:
         st.info("No dataset generated yet.")
     models_list = list(MODELS_DIR.glob("*_pipeline.joblib")) + list(MODELS_DIR.glob("*.h5"))
