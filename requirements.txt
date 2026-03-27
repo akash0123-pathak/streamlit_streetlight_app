@@ -1,11 +1,26 @@
-streamlit>=1.30.0
-pandas>=2.0.0
-numpy>=1.24.0
-opencv-python-headless>=4.8.0
-scikit-learn>=1.3.0
-joblib>=1.3.0
-matplotlib>=3.7.0
+# Smart Streetlight AI — Requirements
+# Install with: pip install -r requirements.txt
 
-# Optional – will auto-disable if not present
-tensorflow>=2.12.0
-ultralytics>=8.0.0
+# Core
+streamlit>=1.35.0
+numpy>=1.24.0
+pandas>=2.0.0
+requests>=2.31.0
+
+# Computer Vision
+opencv-python-headless>=4.8.0
+
+# Machine Learning
+scikit-learn>=1.4.0
+joblib>=1.3.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.20.0
+
+# Optional — Deep Learning (Fog CNN)
+# tensorflow>=2.15.0
+
+# Optional — Object Detection (YOLO)
+# ultralytics>=8.0.0
